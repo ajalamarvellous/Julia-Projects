@@ -84,12 +84,13 @@ end
 
 
 function main()
-    file = readline()
+    println("What is the file name: "), file = readline()
     m_h_t = markovhashtable(file)
+    println("Enter the 2 words to start the next word predictions"),
     start_word = readline()
     while true
         if start_word in keys(m_h_t)
-            suffix = random(m_h_t[start_word])
+            suffix = rand(m_h_t[start_word])
             print(" ", suffix)
             start_word = split(start_word, " ")[2]*" "*suffix
         else
@@ -98,3 +99,5 @@ function main()
         end
     end
 end
+
+main()
