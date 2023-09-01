@@ -84,9 +84,10 @@ end
 
 
 function main()
-    println("What is the file name: "), file = readline()
+    println("What is the file name: ")
+    file = readline()
     m_h_t = markovhashtable(file)
-    println("Enter the 2 words to start the next word predictions"),
+    println("Enter the 2 words to start the next word predictions")
     start_word = readline()
     while true
         if start_word in keys(m_h_t)
